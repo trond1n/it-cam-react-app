@@ -17,6 +17,11 @@ const Navbar = () => {
         </li>
         <li>
           <a className={classes.item} href="#">
+            Messages
+          </a>
+        </li>
+        <li>
+          <a className={classes.item} href="#">
             Music
           </a>
         </li>
