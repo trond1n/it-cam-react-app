@@ -3,5 +3,10 @@
 }
 
 .active {
+
     color: goldenrod
+}
+
+.img {
+    width: 30px;
 }
