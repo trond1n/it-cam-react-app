@@ -1,12 +1,8 @@
 import React from "react";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
-const MyPosts = () => {
-  let postsData = [
-    { id: 1, message: "Hi! How r u?", likeCount: 15 },
-    { id: 2, message: "Hi! It's my first post", likeCount: 20 },
-  ];
-  let postsElements = postsData.map((post) => (
+const MyPosts = (props) => {
+  let postsElements = props.posts.map((post) => (
     <Post message={post.message} likeCount={post.likeCount} />
   ));
 
