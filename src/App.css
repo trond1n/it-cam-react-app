@@ -4,16 +4,15 @@
   display: grid;
   grid-template-areas:
     "h h"
-    "n c";
+    "n c"
+    "f c";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   /* grid-gap: 10px; */
 }
+
 .app-wrapper__content {
   grid-area: c;
   background-color: rgb(200, 212, 155);
 
 }
-
-
-

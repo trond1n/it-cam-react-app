@@ -1,0 +1,10 @@
+.friends {
+    grid-area: f;
+    background-color: palevioletred;
+    padding: 20px;
+}
+
+.friends__items {
+    display: flex;
+
+}
