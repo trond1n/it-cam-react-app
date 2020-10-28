@@ -1,7 +1,6 @@
-// import { rerenderEntireTree } from "../render";
-
-const addPost = "ADD-POST";
-const updNewPostText = "UPDATE-NEW-POST-TEXT";
+import dialogsReducer from "./dialogsReducer";
+import friendsReducer from "./friendsReducer";
+import profileReducer from "./profileReducer";
 
 let store = {
   _state: {
@@ -12,26 +11,6 @@ let store = {
       ],
       newPostText: "it-cam",
     },
-    friendsList: {
-      friends: [
-        {
-          id: 4,
-          name: "Lena",
-          img: "https://99px.ru/sstorage/1/2009/06/1010609174346.gif",
-        },
-        {
-          id: 5,
-          name: "Andrew",
-          img: "https://99px.ru/sstorage/1/2009/05/1200509145156.gif",
-        },
-        {
-          id: 6,
-          name: "Mike",
-          img: "https://99px.ru/sstorage/1/2009/05/1160509141516.jpg",
-        },
-      ],
-    },
-
     dialogsPage: {
       dialogsData: [
         {
@@ -75,6 +54,26 @@ let store = {
         { id: 5, message: "Have a nice day!" },
         { id: 6, message: "God bless u" },
       ],
+      newMessageBody: "",
+    },
+    friendsList: {
+      friends: [
+        {
+          id: 4,
+          name: "Lena",
+          img: "https://99px.ru/sstorage/1/2009/06/1010609174346.gif",
+        },
+        {
+          id: 5,
+          name: "Andrew",
+          img: "https://99px.ru/sstorage/1/2009/05/1200509145156.gif",
+        },
+        {
+          id: 6,
+          name: "Mike",
+          img: "https://99px.ru/sstorage/1/2009/05/1160509141516.jpg",
+        },
+      ],
     },
   },
   _callSubscriber() {
@@ -89,28 +88,12 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === addPost) {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likeCount: 0,
-      };
-      this._state.profilePage.postsData.push(newPost);
-      this._state.profilePage.newPostText = "";
-
-      this._callSubscriber(this._state);
-    } else if (action.type === updNewPostText) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.friendsList = friendsReducer(this._state.friendsList, action);
+    this._callSubscriber(this._state);
   },
 };
-
-export const addPostActionCreator = () => ({ type: addPost });
-export const updateNewPostTextActionCreator = (text) => ({
-  type: updNewPostText,
-  newText: text,
-});
 
 window.store = store;
 
