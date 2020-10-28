@@ -1,14 +1,10 @@
 import React from "react";
-import {
-  sendMessageCreator,
-  updateNewMessageBodyCreator,
-} from "../../redux/dialogsReducer";
 import DialogItem from "./DialogItem/DialogItem";
 import classes from "./Dialogs.module.css";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-  let state = props.store.getState().dialogsPage;
+  let state = props.dialogsPage;
 
   let dialogsElements = state.dialogsData.map((dialog) => (
     <DialogItem img={dialog.img} name={dialog.name} id={dialog.id} />
@@ -17,14 +13,13 @@ const Dialogs = (props) => {
     <Message message={message.message} id={message.id} />
   ));
   let newMessageBody = state.newMessageBody;
-  // let newMessageElement = React.createRef();
 
   let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator());
+    props.sendMessage();
   };
   let onNewMessageChange = (e) => {
     let body = e.target.value;
-    props.store.dispatch(updateNewMessageBodyCreator(body));
+    props.updateNewMessageBody(body);
   };
 
   return (
@@ -39,7 +34,6 @@ const Dialogs = (props) => {
             value={newMessageBody}
             onChange={onNewMessageChange}
             placeholder="Введите сообщение "
-            // ref={newMessageElement}
           ></textarea>
         </div>
         <div>
