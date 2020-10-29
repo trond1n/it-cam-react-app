@@ -4,12 +4,16 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import store from "./redux/redux-store";
+// import { Provider } from "./StoreContext";
+import { Provider } from "react-redux";
 // import { addPost, updateNewPostText } from "./redux/state";
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>,
     document.getElementById("root")
   );
