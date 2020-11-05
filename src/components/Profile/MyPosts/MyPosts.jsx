@@ -18,7 +18,6 @@ const MyPosts = (props) => {
 
     props.updateNewPostText(text);
   };
-  console.log(props.posts);
 
   return (
     <div className={classes.post__block}>
