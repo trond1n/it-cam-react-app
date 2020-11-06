@@ -1,8 +1,15 @@
 .header {
-    grid-area: h;
-    background-color: rgb(140, 207, 146);
-  }
-  
-  .img {
-    width: 50px;
-  }
+  grid-area: h;
+  background-color: rgb(140, 207, 146);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.img {
+  width: 50px;
+}
+
+.login__block  {
+  color: aliceblue;
+}

@@ -4,7 +4,8 @@ import "./App.css";
 // import Dialogs from "./components/Dialogs/Dialogs";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import FriendList from "./components/FriendsList/FriendList";
-import Header from "./components/Header/Header";
+// import Header from "./components/Header/Header";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import Music from "./components/Music/Music";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
@@ -17,7 +18,7 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header />
+        <HeaderContainer />
         <Navbar />
         {/* <FriendList /> */}
         <div className="app-wrapper__content">
