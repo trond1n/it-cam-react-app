@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./users.module.css";
-import { usersAPI } from "../../API/api";
 
 let Users = (props) => {
   let pages = [];
@@ -46,7 +45,7 @@ let Users = (props) => {
                 <button
                   disabled={props.followingInProgress.some((id) => id === u.id)}
                   onClick={() => {
-                    props.unFollow(u.id);
+                    props.unfollow(u.id);
                   }}
                 >
                   Unfollow

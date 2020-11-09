@@ -47,7 +47,7 @@ export const setUserProfileAC = (profile) => ({
   profile,
 });
 
-export const setUsersThunk = (id) => {
+export const setUserThunk = (id) => {
   return (dispatch) => {
     usersAPI.setUserProfile(id).then((data) => {
       dispatch(setUserProfileAC(data));

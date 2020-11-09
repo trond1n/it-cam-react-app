@@ -14,7 +14,15 @@ const ProfileInfo = (props) => {
         />
         <div className={classes.description__block}>ava+desc</div>
 
-        <img src={props.profile.photos.large} alt="" />
+        <img
+          src={
+            props.profile.photos.large != null
+              ? props.profile.photos.large
+              : "https://vk.com/images/camera_400.png?ava=1"
+          }
+          alt="ава пользователя
+        "
+        />
       </div>
     );
   }

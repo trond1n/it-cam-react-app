@@ -6,6 +6,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import FriendList from "./components/FriendsList/FriendList";
 // import Header from "./components/Header/Header";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import LoginPage from "./components/Login/Login";
 import Music from "./components/Music/Music";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
@@ -23,8 +24,9 @@ const App = (props) => {
         {/* <FriendList /> */}
         <div className="app-wrapper__content">
           <Route path="/dialogs" render={() => <DialogsContainer />} />
-          <Route path="/profile/:userId" render={() => <ProfileContainer />} />
+          <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
           <Route path="/users" render={() => <UsersContainer />} />
+          <Route path="/login" render={() => <LoginPage />} />
 
           <Route path="/news" component={News} />
           <Route path="/music" component={Music} />
