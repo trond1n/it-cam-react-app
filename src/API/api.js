@@ -22,10 +22,23 @@ export const usersAPI = {
   unFollow(id) {
     return instance.delete(`follow/${id}`).then((response) => response.data);
   },
-  setUserProfile(id) {
-    return instance.get(`profile/` + id).then((response) => response.data);
-  },
+
+};
+
+export const authAPI = {
   setAuthUserData() {
     return instance.get(`/auth/me`).then((response) => response.data);
   },
+};
+
+export const profileAPI = {
+  setUserProfile(id) {
+    return instance.get(`profile/${id}`).then((response) => response.data);
+  },
+  getStatus(id){
+    return instance.get(`profile/status/${id}`).then((response) => response.data);
+  },
+  updateStatus(status){
+    return instance.put('profile/status/', {status}).then((response) => response.data);
+  }
 };
