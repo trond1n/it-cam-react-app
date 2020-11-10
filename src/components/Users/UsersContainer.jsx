@@ -12,8 +12,8 @@ import {
 } from "../../redux/usersReducer";
 import Users from "./Users";
 import Preloader from "../Common/Preloader/preloader";
-import { withAuthRedirect } from "../../HOC/withAuthRedirect";
 import { compose } from "redux";
+import { withAuthRedirect } from "../HOC/withAuthRedirect";
 // import { usersAPI } from "../../API/api";
 
 class UsersContainer extends React.Component {
