@@ -1,5 +1,14 @@
 import React from "react"; // import classes from "./Login.module.css";
+import LoginReduxform from "./LoginForm";
 const Login = (props) => {
-  return <h1>LOGIN</h1>;
+  const onSubmit = (formData) => {
+    console.log(formData);
+  };
+  return (
+    <div>
+      <h1>Login</h1>
+      <LoginReduxform onSubmit={onSubmit} />
+    </div>
+  );
 };
 export default Login;

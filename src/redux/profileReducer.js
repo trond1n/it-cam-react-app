@@ -12,7 +12,7 @@ let initialState = {
   ],
   newPostText: "it-cam",
   profile: null,
-  status: "",
+  status: "----",
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -34,7 +34,6 @@ const profileReducer = (state = initialState, action) => {
     case setUserProfile:
       return { ...state, profile: action.profile };
     case setStatus:
-
       return { ...state, status: action.status };
 
     default:
@@ -75,7 +74,7 @@ export const updateStatusThunk = (status) => {
   return (dispatch) => {
     profileAPI.updateStatus(status).then((data) => {
       if (data.resultCode === 0) {
-        dispatch(setStatusAC(data));
+        dispatch(setStatusAC(status));
       }
     });
   };
