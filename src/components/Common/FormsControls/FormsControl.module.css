@@ -6,3 +6,9 @@
 .form__control.error span {
     color: red
 }
+
+.form__summary_error {
+    border: 1px solid salmon;
+    padding: 5px;
+    color: rgb(206, 155, 155)
+}
