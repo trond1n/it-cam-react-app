@@ -5,16 +5,12 @@ import { Route, withRouter } from "react-router-dom";
 import { compose } from "redux";
 import "./App.css";
 import Preloader from "./components/Common/Preloader/preloader";
-// import Dialogs from "./components/Dialogs/Dialogs";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-// import FriendList from "./components/FriendsList/FriendList";
-// import Header from "./components/Header/Header";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
 import Music from "./components/Music/Music";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
-// import Profile from "./components/Profile/Profile";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
@@ -50,4 +46,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized,
 });
-export default compose(withRouter, connect(mapStateToProps, { initializeApp }))(App);
+export default compose(
+  withRouter,
+  connect(mapStateToProps, { initializeApp })
+)(App);

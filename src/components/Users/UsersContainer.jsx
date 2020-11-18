@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 import {
   followThunk as follow,
   setCurrentPageAC as setCurrentPage,
-  // setTotalUsersCountAC as setTotalUsersCount,
-  // setUsersAC as setUsers,
-  // toggleIsFetchingAC as toggleIsFetching,
   unFollowThunk as unfollow,
   toggleIsFollowingProgressAC as toggleFollowInProgress,
   getUsers,
@@ -13,7 +10,6 @@ import {
 import Users from "./Users";
 import Preloader from "../Common/Preloader/preloader";
 import { compose } from "redux";
-// import { withAuthRedirect } from "../HOC/withAuthRedirect";
 import {
   getPageSize,
   getAllUsers,
@@ -22,14 +18,16 @@ import {
   getIsFetching,
   getCurrentPage,
 } from "../../redux/usersSelectors";
-// import { usersAPI } from "../../API/api";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
-    this.props.getUsers(this.props.currentPage, this.props.pageSize);
+    let { currentPage, pageSize } = this.props;
+    this.props.getUsers(currentPage, pageSize);
   }
   onPageChanged = (pageNumber) => {
-    this.props.getUsers(pageNumber, this.props.pageSize);
+    let { pageSize } = this.props;
+
+    this.props.getUsers(pageNumber, pageSize);
     this.props.setCurrentPage(pageNumber);
   };
 

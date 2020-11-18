@@ -1,8 +1,8 @@
 import { profileAPI } from "../API/api";
 
-const addPost = "ADD-POST";
-const setUserProfile = "SET-USER-PROFILE";
-const setStatus = "SET-STATUS";
+const addPost = "samurai-network/profile/ADD-POST";
+const setUserProfile = "samurai-network/profile/SET-USER-PROFILE";
+const setStatus = "samurai-network/profile/SET-STATUS";
 
 let initialState = {
   postsData: [
@@ -28,7 +28,6 @@ const profileReducer = (state = initialState, action) => {
         newPostText: "",
       };
 
-
     case setUserProfile:
       return { ...state, profile: action.profile };
     case setStatus:
@@ -53,27 +52,24 @@ export const setStatusAC = (status) => ({
 });
 
 export const setUserThunk = (id) => {
-  return (dispatch) => {
-    profileAPI.setUserProfile(id).then((data) => {
-      dispatch(setUserProfileAC(data));
-    });
+  return async (dispatch) => {
+    let response = await profileAPI.setUserProfile(id);
+    dispatch(setUserProfileAC(response));
   };
 };
 export const getStatusThunk = (id) => {
-  return (dispatch) => {
-    profileAPI.getStatus(id).then((data) => {
-      dispatch(setStatusAC(data));
-    });
+  return async (dispatch) => {
+    let response = await profileAPI.getStatus(id);
+    dispatch(setStatusAC(response));
   };
 };
 
 export const updateStatusThunk = (status) => {
-  return (dispatch) => {
-    profileAPI.updateStatus(status).then((data) => {
-      if (data.resultCode === 0) {
-        dispatch(setStatusAC(status));
-      }
-    });
+  return async (dispatch) => {
+    let response = await profileAPI.updateStatus(status);
+    if (response.resultCode === 0) {
+      dispatch(setStatusAC(status));
+    }
   };
 };
 

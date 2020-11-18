@@ -1,7 +1,7 @@
 import { stopSubmit } from "redux-form";
 import { authAPI } from "../API/api";
 
-const SET_USER_DATA = "SET_USER_DATA";
+const SET_USER_DATA = "samurai-network/auth/SET_USER_DATA";
 
 let initialState = {
   userId: null,
@@ -28,36 +28,33 @@ export const setAuthUserData = (userId, email, login, isAuth) => ({
   payload: { userId, email, login, isAuth },
 });
 
-export const setUsersThunk = () => {
-  return (dispatch) => {
-    return authAPI.me().then((data) => {
-      if (data.resultCode === 0) {
-        let { id, email, login } = data.data;
-        dispatch(setAuthUserData(id, email, login, true));
-      }
-    });
-  };
+export const setUsersThunk = () => async (dispatch) => {
+  let response = await authAPI.me();
+
+  if (response.resultCode === 0) {
+    let { id, email, login } = response.data;
+    dispatch(setAuthUserData(id, email, login, true));
+  }
 };
+
 export const loginThunk = (email, password, rememberMe) => {
-  return (dispatch) => {
-    authAPI.login(email, password, rememberMe).then((data) => {
-      if (data.resultCode === 0) {
-        dispatch(setUsersThunk());
-      } else {
-        let message =
-          data.messages.length > 0 ? data.messages[0] : "Some Error";
-        dispatch(stopSubmit("login", { _error: message }));
-      }
-    });
+  return async (dispatch) => {
+    let response = await authAPI.login(email, password, rememberMe);
+    if (response.resultCode === 0) {
+      dispatch(setUsersThunk());
+    } else {
+      let message =
+        response.messages.length > 0 ? response.messages[0] : "Some Error";
+      dispatch(stopSubmit("login", { _error: message }));
+    }
   };
 };
 export const logoutThunk = () => {
-  return (dispatch) => {
-    authAPI.logout().then((data) => {
-      if (data.resultCode === 0) {
-        dispatch(setAuthUserData(null, null, null, false));
-      }
-    });
+  return async (dispatch) => {
+    let response = await authAPI.logout();
+    if (response.resultCode === 0) {
+      dispatch(setAuthUserData(null, null, null, false));
+    }
   };
 };
 
