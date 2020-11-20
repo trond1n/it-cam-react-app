@@ -1,3 +1,7 @@
 .description__block {
     padding: 10px;
 }
+
+.main__photo {
+    max-width: 200px;
+}

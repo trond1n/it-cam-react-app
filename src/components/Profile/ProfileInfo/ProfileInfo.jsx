@@ -3,7 +3,12 @@ import Preloader from "../../Common/Preloader/preloader";
 import classes from "./ProfileInfo.module.css";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
-const ProfileInfo = ({ profile, status, updateStatus }) => {
+const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto }) => {
+  const onMainPhotoSelected = (e) => {
+    if (e.target.files.length) {
+      savePhoto(e.target.files[0]);
+    }
+  };
   if (!profile) {
     return <Preloader />;
   } else {
@@ -11,6 +16,7 @@ const ProfileInfo = ({ profile, status, updateStatus }) => {
       <div>
         <div className={classes.description__block}>
           <img
+            className={classes.main__photo}
             src={
               profile.photos.large != null
                 ? profile.photos.large
@@ -18,6 +24,7 @@ const ProfileInfo = ({ profile, status, updateStatus }) => {
             }
             alt="ава пользователя"
           />
+          {isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
           <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
         </div>
       </div>

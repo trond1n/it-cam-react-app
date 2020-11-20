@@ -52,4 +52,16 @@ export const profileAPI = {
       .put("profile/status/", { status })
       .then((response) => response.data);
   },
+  savePhoto(profilePhoto) {
+    const formData = new FormData();
+    formData.append("image", profilePhoto);
+
+    return instance
+      .put("profile/photo/", formData, {
+        headers: {
+          "Content-type": "multipart/form-data",
+        },
+      })
+      .then((response) => response.data);
+  },
 };

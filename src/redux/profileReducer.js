@@ -3,6 +3,7 @@ import { profileAPI } from "../API/api";
 const addPost = "samurai-network/profile/ADD-POST";
 const setUserProfile = "samurai-network/profile/SET-USER-PROFILE";
 const setStatus = "samurai-network/profile/SET-STATUS";
+const savePhotoSucces = "samurai-network/profile/SAVE-PHOTO-SUCCES";
 
 let initialState = {
   postsData: [
@@ -32,6 +33,8 @@ const profileReducer = (state = initialState, action) => {
       return { ...state, profile: action.profile };
     case setStatus:
       return { ...state, status: action.status };
+    case savePhotoSucces:
+      return { ...state, profile: { ...state.profile, photos: action.photos } };
 
     default:
       return state;
@@ -49,6 +52,10 @@ export const setUserProfileAC = (profile) => ({
 export const setStatusAC = (status) => ({
   type: setStatus,
   status,
+});
+export const savePhotoAC = (photos) => ({
+  type: savePhotoSucces,
+  photos,
 });
 
 export const setUserThunk = (id) => {
@@ -69,6 +76,14 @@ export const updateStatusThunk = (status) => {
     let response = await profileAPI.updateStatus(status);
     if (response.resultCode === 0) {
       dispatch(setStatusAC(status));
+    }
+  };
+};
+export const savePhotoThunk = (file) => {
+  return async (dispatch) => {
+    let response = await profileAPI.savePhoto(file);
+    if (response.resultCode === 0) {
+      dispatch(savePhotoAC(response.data.photos));
     }
   };
 };
