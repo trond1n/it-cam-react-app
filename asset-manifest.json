@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/it-cam-react-app/static/css/main.1bbd20c9.chunk.css",
-    "main.js": "/it-cam-react-app/static/js/main.db73a584.chunk.js",
-    "main.js.map": "/it-cam-react-app/static/js/main.db73a584.chunk.js.map",
-    "runtime-main.js": "/it-cam-react-app/static/js/runtime-main.eda7c9d0.js",
-    "runtime-main.js.map": "/it-cam-react-app/static/js/runtime-main.eda7c9d0.js.map",
-    "static/js/2.df0967a6.chunk.js": "/it-cam-react-app/static/js/2.df0967a6.chunk.js",
-    "static/js/2.df0967a6.chunk.js.map": "/it-cam-react-app/static/js/2.df0967a6.chunk.js.map",
+    "main.js": "/it-cam-react-app/static/js/main.15cffed3.chunk.js",
+    "main.js.map": "/it-cam-react-app/static/js/main.15cffed3.chunk.js.map",
+    "runtime-main.js": "/it-cam-react-app/static/js/runtime-main.e43801d0.js",
+    "runtime-main.js.map": "/it-cam-react-app/static/js/runtime-main.e43801d0.js.map",
+    "static/js/2.64a375ee.chunk.js": "/it-cam-react-app/static/js/2.64a375ee.chunk.js",
+    "static/js/2.64a375ee.chunk.js.map": "/it-cam-react-app/static/js/2.64a375ee.chunk.js.map",
     "static/css/3.f1e0461b.chunk.css": "/it-cam-react-app/static/css/3.f1e0461b.chunk.css",
-    "static/js/3.b09bd988.chunk.js": "/it-cam-react-app/static/js/3.b09bd988.chunk.js",
-    "static/js/3.b09bd988.chunk.js.map": "/it-cam-react-app/static/js/3.b09bd988.chunk.js.map",
-    "static/css/4.5f75b505.chunk.css": "/it-cam-react-app/static/css/4.5f75b505.chunk.css",
-    "static/js/4.ac44ad42.chunk.js": "/it-cam-react-app/static/js/4.ac44ad42.chunk.js",
-    "static/js/4.ac44ad42.chunk.js.map": "/it-cam-react-app/static/js/4.ac44ad42.chunk.js.map",
+    "static/js/3.c70df1b8.chunk.js": "/it-cam-react-app/static/js/3.c70df1b8.chunk.js",
+    "static/js/3.c70df1b8.chunk.js.map": "/it-cam-react-app/static/js/3.c70df1b8.chunk.js.map",
+    "static/css/4.b6c69c5c.chunk.css": "/it-cam-react-app/static/css/4.b6c69c5c.chunk.css",
+    "static/js/4.3b9802b8.chunk.js": "/it-cam-react-app/static/js/4.3b9802b8.chunk.js",
+    "static/js/4.3b9802b8.chunk.js.map": "/it-cam-react-app/static/js/4.3b9802b8.chunk.js.map",
     "index.html": "/it-cam-react-app/index.html",
     "static/css/3.f1e0461b.chunk.css.map": "/it-cam-react-app/static/css/3.f1e0461b.chunk.css.map",
-    "static/css/4.5f75b505.chunk.css.map": "/it-cam-react-app/static/css/4.5f75b505.chunk.css.map",
+    "static/css/4.b6c69c5c.chunk.css.map": "/it-cam-react-app/static/css/4.b6c69c5c.chunk.css.map",
     "static/css/main.1bbd20c9.chunk.css.map": "/it-cam-react-app/static/css/main.1bbd20c9.chunk.css.map",
-    "static/js/2.df0967a6.chunk.js.LICENSE.txt": "/it-cam-react-app/static/js/2.df0967a6.chunk.js.LICENSE.txt",
+    "static/js/2.64a375ee.chunk.js.LICENSE.txt": "/it-cam-react-app/static/js/2.64a375ee.chunk.js.LICENSE.txt",
     "static/media/preloader.c2f67646.svg": "/it-cam-react-app/static/media/preloader.c2f67646.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.eda7c9d0.js",
-    "static/js/2.df0967a6.chunk.js",
+    "static/js/runtime-main.e43801d0.js",
+    "static/js/2.64a375ee.chunk.js",
     "static/css/main.1bbd20c9.chunk.css",
-    "static/js/main.db73a584.chunk.js"
+    "static/js/main.15cffed3.chunk.js"
   ]
 }
