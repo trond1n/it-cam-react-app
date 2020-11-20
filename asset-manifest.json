@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/it-cam-react-app/static/css/main.1bbd20c9.chunk.css",
-    "main.js": "/it-cam-react-app/static/js/main.156548eb.chunk.js",
-    "main.js.map": "/it-cam-react-app/static/js/main.156548eb.chunk.js.map",
-    "runtime-main.js": "/it-cam-react-app/static/js/runtime-main.d99d9462.js",
-    "runtime-main.js.map": "/it-cam-react-app/static/js/runtime-main.d99d9462.js.map",
-    "static/js/2.3e394e8e.chunk.js": "/it-cam-react-app/static/js/2.3e394e8e.chunk.js",
-    "static/js/2.3e394e8e.chunk.js.map": "/it-cam-react-app/static/js/2.3e394e8e.chunk.js.map",
-    "static/css/3.f1e0461b.chunk.css": "/it-cam-react-app/static/css/3.f1e0461b.chunk.css",
-    "static/js/3.ef294a1c.chunk.js": "/it-cam-react-app/static/js/3.ef294a1c.chunk.js",
-    "static/js/3.ef294a1c.chunk.js.map": "/it-cam-react-app/static/js/3.ef294a1c.chunk.js.map",
-    "static/css/4.5f75b505.chunk.css": "/it-cam-react-app/static/css/4.5f75b505.chunk.css",
-    "static/js/4.ac44ad42.chunk.js": "/it-cam-react-app/static/js/4.ac44ad42.chunk.js",
-    "static/js/4.ac44ad42.chunk.js.map": "/it-cam-react-app/static/js/4.ac44ad42.chunk.js.map",
-    "index.html": "/it-cam-react-app/index.html",
-    "static/css/3.f1e0461b.chunk.css.map": "/it-cam-react-app/static/css/3.f1e0461b.chunk.css.map",
-    "static/css/4.5f75b505.chunk.css.map": "/it-cam-react-app/static/css/4.5f75b505.chunk.css.map",
-    "static/css/main.1bbd20c9.chunk.css.map": "/it-cam-react-app/static/css/main.1bbd20c9.chunk.css.map",
-    "static/js/2.3e394e8e.chunk.js.LICENSE.txt": "/it-cam-react-app/static/js/2.3e394e8e.chunk.js.LICENSE.txt",
-    "static/media/preloader.c2f67646.svg": "/it-cam-react-app/static/media/preloader.c2f67646.svg"
+    "main.css": "/trond1n/it-cam-react-app.git/static/css/main.1bbd20c9.chunk.css",
+    "main.js": "/trond1n/it-cam-react-app.git/static/js/main.93270963.chunk.js",
+    "main.js.map": "/trond1n/it-cam-react-app.git/static/js/main.93270963.chunk.js.map",
+    "runtime-main.js": "/trond1n/it-cam-react-app.git/static/js/runtime-main.51f65e5b.js",
+    "runtime-main.js.map": "/trond1n/it-cam-react-app.git/static/js/runtime-main.51f65e5b.js.map",
+    "static/js/2.3e394e8e.chunk.js": "/trond1n/it-cam-react-app.git/static/js/2.3e394e8e.chunk.js",
+    "static/js/2.3e394e8e.chunk.js.map": "/trond1n/it-cam-react-app.git/static/js/2.3e394e8e.chunk.js.map",
+    "static/css/3.f1e0461b.chunk.css": "/trond1n/it-cam-react-app.git/static/css/3.f1e0461b.chunk.css",
+    "static/js/3.ef294a1c.chunk.js": "/trond1n/it-cam-react-app.git/static/js/3.ef294a1c.chunk.js",
+    "static/js/3.ef294a1c.chunk.js.map": "/trond1n/it-cam-react-app.git/static/js/3.ef294a1c.chunk.js.map",
+    "static/css/4.5f75b505.chunk.css": "/trond1n/it-cam-react-app.git/static/css/4.5f75b505.chunk.css",
+    "static/js/4.ac44ad42.chunk.js": "/trond1n/it-cam-react-app.git/static/js/4.ac44ad42.chunk.js",
+    "static/js/4.ac44ad42.chunk.js.map": "/trond1n/it-cam-react-app.git/static/js/4.ac44ad42.chunk.js.map",
+    "index.html": "/trond1n/it-cam-react-app.git/index.html",
+    "static/css/3.f1e0461b.chunk.css.map": "/trond1n/it-cam-react-app.git/static/css/3.f1e0461b.chunk.css.map",
+    "static/css/4.5f75b505.chunk.css.map": "/trond1n/it-cam-react-app.git/static/css/4.5f75b505.chunk.css.map",
+    "static/css/main.1bbd20c9.chunk.css.map": "/trond1n/it-cam-react-app.git/static/css/main.1bbd20c9.chunk.css.map",
+    "static/js/2.3e394e8e.chunk.js.LICENSE.txt": "/trond1n/it-cam-react-app.git/static/js/2.3e394e8e.chunk.js.LICENSE.txt",
+    "static/media/preloader.c2f67646.svg": "/trond1n/it-cam-react-app.git/static/media/preloader.c2f67646.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d99d9462.js",
+    "static/js/runtime-main.51f65e5b.js",
     "static/js/2.3e394e8e.chunk.js",
     "static/css/main.1bbd20c9.chunk.css",
-    "static/js/main.156548eb.chunk.js"
+    "static/js/main.93270963.chunk.js"
   ]
 }
