@@ -1,3 +1,4 @@
+import { stopSubmit } from "redux-form";
 import { profileAPI } from "../API/api";
 
 const addPost = "samurai-network/profile/ADD-POST";
@@ -84,6 +85,20 @@ export const savePhotoThunk = (file) => {
     let response = await profileAPI.savePhoto(file);
     if (response.resultCode === 0) {
       dispatch(savePhotoAC(response.data.photos));
+    }
+  };
+};
+export const saveProfileThunk = (profile) => {
+  return async (dispatch, getState) => {
+    const userId = getState().auth.userId;
+    let response = await profileAPI.saveProfile(profile);
+    if (response.resultCode === 0) {
+      dispatch(setUserThunk(userId));
+    } else {
+      let message =
+        response.messages.length > 0 ? response.messages[0] : "Some Error";
+      dispatch(stopSubmit("edit-profile", { _error: message }));
+      return Promise.reject(message)
     }
   };
 };

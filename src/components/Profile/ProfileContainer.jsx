@@ -6,6 +6,7 @@ import {
   getStatusThunk as getStatus,
   updateStatusThunk as updateStatus,
   savePhotoThunk as savePhoto,
+  saveProfileThunk as saveProfile,
 } from "../../redux/profileReducer";
 import { withRouter } from "react-router-dom";
 import { compose } from "redux";
@@ -59,6 +60,7 @@ export default compose(
     getStatus,
     updateStatus,
     savePhoto,
+    saveProfile,
   }),
   withRouter
   // withAuthRedirect
