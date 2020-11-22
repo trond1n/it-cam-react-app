@@ -3,7 +3,7 @@ import { reduxForm } from "redux-form";
 import { createField, Input } from "../Common/FormsControls/FormsControls";
 import { required } from "../Utils/Validators/validator";
 import classes from "../Common/FormsControls/FormsControl.module.css";
-const LoginForm = ({ handleSubmit, error }) => {
+const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
   return (
     <form onSubmit={handleSubmit}>
       {createField("Email", "email", [required], Input)}
@@ -20,7 +20,9 @@ const LoginForm = ({ handleSubmit, error }) => {
         },
         "remember me"
       )}
-
+      {captchaUrl && <img src={captchaUrl} />}
+      {captchaUrl &&
+        createField("введите символы с картинки", "captcha", [required], Input)}
       {error && <div className={classes.form__summary_error}>{error}</div>}
       <div>
         <button>Login</button>
