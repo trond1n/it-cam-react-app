@@ -6,9 +6,9 @@ import Message from "./Message/Message";
 import AddMessageForm from "./AddMessageForm";
 
 const Dialogs = (props) => {
-  let state = props.dialogsPage;
+  const state = props.dialogsPage;
 
-  let dialogsElements = state.dialogsData.map((dialog) => (
+  const dialogsElements = state.dialogsData.map((dialog) => (
     <DialogItem
       img={dialog.img}
       name={dialog.name}
@@ -16,11 +16,11 @@ const Dialogs = (props) => {
       id={dialog.id}
     />
   ));
-  let messagesElements = state.messagesData.map((message) => (
+  const messagesElements = state.messagesData.map((message) => (
     <Message message={message.message} id={message.id} key={message.id} />
   ));
 
-  let addNewMessage = (values) => {
+  const addNewMessage = (values) => {
     props.sendMessage(values.newMessageBody);
   };
 

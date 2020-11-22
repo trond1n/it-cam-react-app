@@ -4,12 +4,12 @@ import { sendMessageCreator } from "../../redux/dialogsReducer";
 import { withAuthRedirect } from "../HOC/withAuthRedirect";
 import Dialogs from "./Dialogs";
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     dialogsPage: state.dialogsPage,
   };
 };
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     sendMessage: (newMessageBody) => {
       dispatch(sendMessageCreator(newMessageBody));

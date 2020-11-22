@@ -1,7 +1,13 @@
 import React from "react";
 import { Component } from "react";
 import { connect, Provider } from "react-redux";
-import { HashRouter, Route, withRouter } from "react-router-dom";
+import {
+  HashRouter,
+  Redirect,
+  Route,
+  Switch,
+  withRouter,
+} from "react-router-dom";
 import { compose } from "redux";
 import "./App.css";
 import Preloader from "./components/Common/Preloader/preloader";
@@ -14,7 +20,7 @@ import Music from "./components/Music/Music";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
 // import ProfileContainer from "./components/Profile/ProfileContainer";
-import Settings from "./components/Settings/Settings";
+// import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
 import { initializeAppThunk as initializeApp } from "./redux/appReducer";
 import store from "./redux/redux-store";
@@ -27,10 +33,18 @@ const ProfileContainer = React.lazy(() =>
 );
 
 class App extends Component {
+  catchAllUnhandledErrors = (promiseRejectionEvent) => {
+    alert("some error");
+    console.error(promiseRejectionEvent);
+  };
   componentDidMount() {
     this.props.initializeApp();
+    window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
   }
+componentWillUnmount(){
+  window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
 
+}
   render() {
     if (!this.props.initialized) {
       return <Preloader />;
@@ -41,17 +55,21 @@ class App extends Component {
         <Navbar />
         {/* <FriendList /> */}
         <div className="app-wrapper__content">
-          <Route path="/dialogs" render={WithSuspense(DialogsContainer)} />
-          <Route
-            path="/profile/:userId?"
-            render={WithSuspense(ProfileContainer)}
-          />
-          <Route path="/users" render={() => <UsersContainer />} />
-          <Route path="/login" render={() => <LoginPage />} />
+          <Switch>
+            <Redirect exact from="/" to="/profile" />
 
-          <Route path="/news" component={News} />
-          <Route path="/music" component={Music} />
-          <Route path="/settings" component={Settings} />
+            <Route path="/dialogs" render={WithSuspense(DialogsContainer)} />
+            <Route
+              path="/profile/:userId?"
+              render={WithSuspense(ProfileContainer)}
+            />
+            <Route path="/users" render={() => <UsersContainer />} />
+            <Route path="/login" render={() => <LoginPage />} />
+
+            <Route path="/news" component={News} />
+            <Route path="/music" component={Music} />
+            <Route path="/*" render={() => <div>PAGE NOT FOUND</div>} />
+          </Switch>
         </div>
       </div>
     );

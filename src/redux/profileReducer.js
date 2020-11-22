@@ -74,11 +74,15 @@ export const getStatusThunk = (id) => {
 
 export const updateStatusThunk = (status) => {
   return async (dispatch) => {
+    try{
     let response = await profileAPI.updateStatus(status);
     if (response.resultCode === 0) {
       dispatch(setStatusAC(status));
     }
-  };
+  } catch(error){
+    alert('Error')
+  }
+}
 };
 export const savePhotoThunk = (file) => {
   return async (dispatch) => {

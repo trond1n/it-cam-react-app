@@ -20,7 +20,7 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
         },
         "remember me"
       )}
-      {captchaUrl && <img src={captchaUrl} />}
+      {captchaUrl && <img src={captchaUrl} alt={'капча'}/>}
       {captchaUrl &&
         createField("введите символы с картинки", "captcha", [required], Input)}
       {error && <div className={classes.form__summary_error}>{error}</div>}

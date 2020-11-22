@@ -12,7 +12,7 @@ const ProfileInfo = ({
   savePhoto,
   saveProfile,
 }) => {
-  let [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(false);
   const onSubmit = (formData) => {
     saveProfile(formData).then(() => {
       setEditMode(false);

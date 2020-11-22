@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./users.module.css";
 
-let User = ({ user, followingInProgress, unfollow, follow }) => {
+const User = ({ user, followingInProgress, unfollow, follow }) => {
   return (
     <div>
       <span>

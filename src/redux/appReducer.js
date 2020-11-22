@@ -1,9 +1,10 @@
-import { setUsersThunk as  getAuthUserData} from "./authReducer";
+import { setUsersThunk as getAuthUserData } from "./authReducer";
 
 const setInitialized = "samurai-network/app/SET_INITIALIZED";
 
 let initialState = {
   initialized: false,
+  globalError: null,
 };
 
 const appReducer = (state = initialState, action) => {
